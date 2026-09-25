@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /academics
+Allow: /admissions
+Allow: /admissions/status
+Allow: /campus
+Allow: /blog
+Allow: /contact
+
+# Protect private admin, application lookups and student database
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/admin
+Disallow: /api/admin/*
+
+Sitemap: https://sealednectaracademy.org/sitemap.xml
