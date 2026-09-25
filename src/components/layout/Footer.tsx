@@ -36,8 +36,11 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Column 1: School Identity & Motto */}
           <div className="lg:col-span-4 space-y-4">
             <SchoolCrest size="lg" lightMode={true} />
+            <p className="text-xs font-semibold text-[#D49A24] uppercase tracking-wider">
+              Islamic Education. Academic Excellence. Character Development.
+            </p>
             <p className="text-xs sm:text-sm text-[#FAF7F2]/80 leading-relaxed max-w-sm">
-              An upright Islamic private institution dedicated to providing quality basic and junior secondary education, strong moral values, global languages, and hands-on digital skills.
+              A Muslim educational institution combining sound Islamic education with Western academic learning, moral discipline, global languages and modern digital skills from Early Years through Senior Secondary School.
             </p>
             <div className="pt-2">
               <span className="text-[11px] uppercase tracking-wider text-[#D49A24] font-bold block mb-1">

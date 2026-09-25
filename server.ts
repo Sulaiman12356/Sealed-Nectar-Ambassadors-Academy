@@ -42,6 +42,9 @@ import {
   getPublicProgrammes,
   getAllAdminProgrammes,
   updateProgramme,
+  getPublicIslamicProgrammes,
+  getAllAdminIslamicProgrammes,
+  updateIslamicProgramme,
   getMediaLibraryItems,
   addMediaLibraryItem,
   deleteMediaLibraryItem,
@@ -731,6 +734,39 @@ async function startServer() {
     } catch (err: any) {
       console.error('Error updating programme:', err);
       res.status(500).json({ error: 'Failed to update programme' });
+    }
+  });
+
+  // -------------------------------------------------------------
+  // Islamic Programmes CMS Endpoints
+  // -------------------------------------------------------------
+
+  app.get('/api/public/islamic-programmes', (_req, res) => {
+    try {
+      res.json(getPublicIslamicProgrammes());
+    } catch (err: any) {
+      console.error('Error fetching Islamic programmes:', err);
+      res.status(500).json({ error: 'Failed to fetch Islamic programmes' });
+    }
+  });
+
+  app.get('/api/admin/islamic-programmes', requireAdminAuth, (_req, res) => {
+    try {
+      res.json(getAllAdminIslamicProgrammes());
+    } catch (err: any) {
+      console.error('Error fetching admin Islamic programmes:', err);
+      res.status(500).json({ error: 'Failed to fetch Islamic programmes' });
+    }
+  });
+
+  app.put('/api/admin/islamic-programmes/:id', requireAdminAuth, requireRole(['super_admin', 'content_editor']), (req, res) => {
+    try {
+      const admin = (req as any).adminUser;
+      const updated = updateIslamicProgramme(req.params.id, req.body, admin.username);
+      res.json({ success: true, programme: updated });
+    } catch (err: any) {
+      console.error('Error updating Islamic programme:', err);
+      res.status(500).json({ error: 'Failed to update Islamic programme' });
     }
   });
 

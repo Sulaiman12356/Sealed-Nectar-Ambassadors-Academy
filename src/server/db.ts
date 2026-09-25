@@ -252,6 +252,33 @@ try {
   // Already exists
 }
 
+try {
+  db.exec("ALTER TABLE academic_programmes_cms ADD COLUMN level_type TEXT NOT NULL DEFAULT 'Basic Education';");
+} catch (_) {
+  // Already exists
+}
+
+// Table for Islamic Programmes CMS
+db.exec(`
+  CREATE TABLE IF NOT EXISTS islamic_programmes_cms (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    kicker TEXT,
+    description TEXT NOT NULL,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    is_active INTEGER NOT NULL DEFAULT 1,
+    updated_at TEXT NOT NULL
+  );
+
+  CREATE TABLE IF NOT EXISTS school_values_cms (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    updated_at TEXT NOT NULL
+  );
+`);
+
 // Password hashing helper
 export function hashPassword(password: string, salt: string): string {
   return crypto.scryptSync(password, salt, 64).toString('hex');
@@ -666,25 +693,58 @@ if (!existingStaff) {
   }
 }
 
-// Seed Academic Programmes CMS if empty
-const existingProgrammes = db.prepare('SELECT id FROM academic_programmes_cms LIMIT 1').get();
-if (!existingProgrammes) {
-  const programmes = [
-    { id: 'prog-creche', className: 'Crèche', ageRange: '0 - 2 years', description: 'Gentle, hygienic early nursery care supporting sensory discovery and responsive emotional bonding.', focusAreas: 'Sensory discovery, hygiene, responsive care, emotional security', sortOrder: 1 },
-    { id: 'prog-kindergarten', className: 'Kindergarten', ageRange: '3 - 4 years', description: 'Early communication, phonics readiness, social play, and fine motor coordination.', focusAreas: 'Phonics readiness, social bonding, creative play, motor coordination', sortOrder: 2 },
-    { id: 'prog-nursery', className: 'Nursery', ageRange: '4 - 5 years', description: 'Foundational literacy, numeracy, creative writing formation, and self-confidence.', focusAreas: 'Early reading, counting, writing formation, self-confidence', sortOrder: 3 },
-    { id: 'prog-primary', className: 'Primary School (Grades 1–6)', ageRange: 'Primary 1 to 6', description: 'Strong foundations in sciences, mathematics, English, Arabic, Chinese, and moral education.', focusAreas: 'Core sciences, mathematics, English, Arabic, Chinese, moral education', sortOrder: 4 },
-    { id: 'prog-jss1', className: 'Junior Secondary School 1 (JSS 1)', ageRange: 'Junior Secondary', description: 'Introductory sciences, basic technology, language immersion tracks, and civic leadership.', focusAreas: 'Basic technology, introductory sciences, language tracks, civic leadership', sortOrder: 5 },
-    { id: 'prog-jss2', className: 'Junior Secondary School 2 (JSS 2)', ageRange: 'Junior Secondary', description: 'Advanced coursework in analytical reasoning, digital competence, coding and pre-vocational skills.', focusAreas: 'Pre-vocational skills, ICT coding, analytical problem solving, Islamic etiquette', sortOrder: 6 },
-  ];
+// Seed Academic Programmes CMS if empty or update to include all levels
+const allProgrammesList = [
+  { id: 'prog-creche', className: 'Crèche', levelType: 'Early Years', ageRange: '0 - 2 years', description: 'Gentle, hygienic early nursery care supporting sensory discovery and responsive emotional bonding.', focusAreas: 'Sensory discovery, hygiene, responsive care, emotional security', sortOrder: 1 },
+  { id: 'prog-kindergarten', className: 'Kindergarten', levelType: 'Early Years', ageRange: '3 - 4 years', description: 'Early communication, phonics readiness, social play, and fine motor coordination.', focusAreas: 'Phonics readiness, social bonding, creative play, motor coordination', sortOrder: 2 },
+  { id: 'prog-nursery', className: 'Nursery', levelType: 'Basic Education', ageRange: '4 - 5 years', description: 'Foundational literacy, numeracy, creative writing formation, and self-confidence.', focusAreas: 'Early reading, counting, writing formation, self-confidence', sortOrder: 3 },
+  { id: 'prog-pri1', className: 'Primary 1', levelType: 'Basic Education', ageRange: '5 - 6 years', description: 'Primary literacy, mathematics, foundational science, Arabic, and moral conduct.', focusAreas: 'Core reading, numeracy, foundational Arabic, moral stories', sortOrder: 4 },
+  { id: 'prog-pri2', className: 'Primary 2', levelType: 'Basic Education', ageRange: '6 - 7 years', description: 'Reading comprehension, arithmetic calculations, basic science and introductory Chinese.', focusAreas: 'Arithmetic, reading fluency, science discovery, Mandarin Chinese', sortOrder: 5 },
+  { id: 'prog-pri3', className: 'Primary 3', levelType: 'Basic Education', ageRange: '7 - 8 years', description: 'Critical thinking, writing composition, nature observation, and computer studies.', focusAreas: 'Composition, mathematical operations, ICT, Tajweed recitation', sortOrder: 6 },
+  { id: 'prog-pri4', className: 'Primary 4', levelType: 'Basic Education', ageRange: '8 - 9 years', description: 'Upper primary coursework, grammar, quantitative reasoning, and creative vocational arts.', focusAreas: 'Quantitative reasoning, science experiments, Arabic grammar', sortOrder: 7 },
+  { id: 'prog-pri5', className: 'Primary 5', levelType: 'Basic Education', ageRange: '9 - 10 years', description: 'Advanced problem solving, project presentations, coding concepts and leadership.', focusAreas: 'Advanced numeracy, Coding basics, leadership, civic ethics', sortOrder: 8 },
+  { id: 'prog-pri6', className: 'Primary 6', levelType: 'Basic Education', ageRange: '10 - 11 years', description: 'Graduation preparation, comprehensive curriculum mastery, and secondary readiness.', focusAreas: 'Comprehensive examination readiness, advanced mathematics, English', sortOrder: 9 },
+  { id: 'prog-jss1', className: 'JSS 1', levelType: 'Junior Secondary', ageRange: 'Junior Secondary', description: 'Introductory sciences, basic technology, language immersion tracks, and civic leadership.', focusAreas: 'Basic technology, introductory sciences, language tracks, civic leadership', sortOrder: 10 },
+  { id: 'prog-jss2', className: 'JSS 2', levelType: 'Junior Secondary', ageRange: 'Junior Secondary', description: 'Advanced coursework in analytical reasoning, digital competence, coding and pre-vocational skills.', focusAreas: 'Pre-vocational skills, ICT coding, analytical problem solving, Islamic etiquette', sortOrder: 11 },
+  { id: 'prog-jss3', className: 'JSS 3', levelType: 'Junior Secondary', ageRange: 'Junior Secondary', description: 'Junior secondary completion, pre-vocational mastery, and transition into senior secondary education.', focusAreas: 'BECE preparation, integrated sciences, business studies, leadership', sortOrder: 12 },
+  { id: 'prog-ss1', className: 'SS 1', levelType: 'Senior Secondary', ageRange: 'Senior Secondary', description: 'Senior secondary entry, core disciplines, academic depth, and initial career pathway exploration.', focusAreas: 'Advanced sciences, arts & commercial foundations, critical inquiry', sortOrder: 13 },
+  { id: 'prog-ss2', className: 'SS 2', levelType: 'Senior Secondary', ageRange: 'Senior Secondary', description: 'In-depth secondary coursework, technology problem solving, leadership, and analytical research.', focusAreas: 'Subject mastery, computer applications, career mentorship, moral integrity', sortOrder: 14 },
+  { id: 'prog-ss3', className: 'SS 3', levelType: 'Senior Secondary', ageRange: 'Senior Secondary', description: 'Senior graduation preparation, higher-education readiness, independent thinking and adulthood.', focusAreas: 'Higher education readiness, advanced subjects, personal responsibility', sortOrder: 15 },
+];
 
-  const now = new Date().toISOString();
-  for (const p of programmes) {
+const nowProg = new Date().toISOString();
+for (const p of allProgrammesList) {
+  const exists = db.prepare('SELECT id FROM academic_programmes_cms WHERE id = ?').get(p.id);
+  if (!exists) {
     db.prepare(`
       INSERT INTO academic_programmes_cms (
-        id, class_name, age_range, description, focus_areas, sort_order, is_active, updated_at
-      ) VALUES (?, ?, ?, ?, ?, ?, 1, ?)
-    `).run(p.id, p.className, p.ageRange, p.description, p.focusAreas, p.sortOrder, now);
+        id, class_name, level_type, age_range, description, focus_areas, sort_order, is_active, updated_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?)
+    `).run(p.id, p.className, p.levelType, p.ageRange, p.description, p.focusAreas, p.sortOrder, nowProg);
+  } else {
+    db.prepare(`
+      UPDATE academic_programmes_cms
+      SET class_name = ?, level_type = ?, age_range = ?, description = ?, focus_areas = ?, sort_order = ?
+      WHERE id = ?
+    `).run(p.className, p.levelType, p.ageRange, p.description, p.focusAreas, p.sortOrder, p.id);
+  }
+}
+
+// Seed Islamic Programmes CMS if empty
+const existingIslamic = db.prepare('SELECT id FROM islamic_programmes_cms LIMIT 1').get();
+if (!existingIslamic) {
+  const initialIslamic = [
+    { id: 'quranic-studies', title: "Qur'anic Studies", kicker: 'Foundational Recitation', description: "Structured learning focused on proper recitation, correct pronunciation (Tajweed), and respectful appreciation of the Holy Qur'an.", sortOrder: 1 },
+    { id: 'arabic-language', title: 'Arabic Language', kicker: 'Linguistic Literacy', description: 'Building linguistic literacy, vocabulary, reading comprehension, and conversational expression in modern Arabic.', sortOrder: 2 },
+    { id: 'islamic-studies', title: 'Islamic Studies', kicker: 'Faith & Knowledge', description: 'Understanding core tenets of faith, acts of worship (Ibadah), prophetic history (Seerah), and the universal message of peace.', sortOrder: 3 },
+    { id: 'islamic-morals', title: 'Islamic Morals and Manners', kicker: 'Character & Conduct', description: 'Emphasizing modesty, upright conscience, truthfulness, kindness to peers, and respectful manners (Adab) in daily life.', sortOrder: 4 },
+    { id: 'daily-supplications', title: 'Daily Supplications & Good Conduct', kicker: 'Daily Remembrance', description: 'Fostering mindfulness through daily remembrances, supplications (Dua), cleanliness, and practical acts of community service.', sortOrder: 5 },
+  ];
+  for (const item of initialIslamic) {
+    db.prepare(`
+      INSERT INTO islamic_programmes_cms (id, title, kicker, description, sort_order, is_active, updated_at)
+      VALUES (?, ?, ?, ?, ?, 1, ?)
+    `).run(item.id, item.title, item.kicker, item.description, item.sortOrder, nowProg);
   }
 }
 
@@ -912,6 +972,7 @@ export function getAdminApplications(filters: {
   search?: string;
   status?: string;
   classApplied?: string;
+  educationLevel?: string;
   sessionId?: string;
   includeArchived?: boolean;
 }) {
@@ -935,6 +996,18 @@ export function getAdminApplications(filters: {
   if (filters.classApplied && filters.classApplied !== 'all') {
     query += ' AND class_applied_for = ?';
     params.push(filters.classApplied);
+  }
+
+  if (filters.educationLevel && filters.educationLevel !== 'all') {
+    if (filters.educationLevel === 'Early Years') {
+      query += " AND (class_applied_for IN ('Crèche', 'Kindergarten'))";
+    } else if (filters.educationLevel === 'Basic Education') {
+      query += " AND (class_applied_for IN ('Nursery', 'Primary 1', 'Primary 2', 'Primary 3', 'Primary 4', 'Primary 5', 'Primary 6'))";
+    } else if (filters.educationLevel === 'Junior Secondary') {
+      query += " AND (class_applied_for IN ('JSS 1', 'JSS 2', 'JSS 3'))";
+    } else if (filters.educationLevel === 'Senior Secondary') {
+      query += " AND (class_applied_for IN ('SS 1', 'SS 2', 'SS 3'))";
+    }
   }
 
   if (filters.search && filters.search.trim()) {
@@ -1435,11 +1508,12 @@ export function updateProgramme(id: string, data: any, adminUsername = 'admin') 
   const now = new Date().toISOString();
   db.prepare(`
     UPDATE academic_programmes_cms
-    SET class_name = ?, age_range = ?, description = ?, focus_areas = ?,
+    SET class_name = ?, level_type = ?, age_range = ?, description = ?, focus_areas = ?,
         sort_order = ?, is_active = ?, updated_at = ?
     WHERE id = ?
   `).run(
     data.className || data.class_name,
+    data.levelType || data.level_type || 'Basic Education',
     data.ageRange || data.age_range,
     data.description,
     data.focusAreas || data.focus_areas,
@@ -1449,6 +1523,36 @@ export function updateProgramme(id: string, data: any, adminUsername = 'admin') 
   );
   logAuditAction(adminUsername, 'PROGRAMME_UPDATE', id, `Updated programme ${data.className || data.class_name}`);
   return db.prepare('SELECT * FROM academic_programmes_cms WHERE id = ?').get(id);
+}
+
+// -------------------------------------------------------------
+// Islamic Programmes & Values CMS
+// -------------------------------------------------------------
+
+export function getPublicIslamicProgrammes() {
+  return db.prepare('SELECT * FROM islamic_programmes_cms WHERE is_active = 1 ORDER BY sort_order ASC').all();
+}
+
+export function getAllAdminIslamicProgrammes() {
+  return db.prepare('SELECT * FROM islamic_programmes_cms ORDER BY sort_order ASC').all();
+}
+
+export function updateIslamicProgramme(id: string, data: any, adminUsername = 'admin') {
+  const now = new Date().toISOString();
+  db.prepare(`
+    UPDATE islamic_programmes_cms
+    SET title = ?, kicker = ?, description = ?, sort_order = ?, is_active = ?, updated_at = ?
+    WHERE id = ?
+  `).run(
+    data.title,
+    data.kicker || '',
+    data.description,
+    data.sortOrder ?? data.sort_order ?? 0,
+    data.isActive ? 1 : 0,
+    now, id
+  );
+  logAuditAction(adminUsername, 'ISLAMIC_PROG_UPDATE', id, `Updated Islamic programme ${data.title}`);
+  return db.prepare('SELECT * FROM islamic_programmes_cms WHERE id = ?').get(id);
 }
 
 // -------------------------------------------------------------

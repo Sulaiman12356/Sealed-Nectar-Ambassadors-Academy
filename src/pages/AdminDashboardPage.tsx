@@ -51,6 +51,7 @@ type TabType =
   | 'announcements'
   | 'gallery'
   | 'school_info'
+  | 'islamic'
   | 'programmes'
   | 'staff'
   | 'admission_settings'

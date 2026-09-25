@@ -35,6 +35,7 @@ export interface SchoolInfo {
 export interface AcademicLevel {
   id: string;
   title: string;
+  levelType: 'Early Years' | 'Basic Education' | 'Junior Secondary' | 'Senior Secondary';
   ageRange: string;
   description: string;
   focus: string;
@@ -46,7 +47,7 @@ export interface WhyChoosePillar {
   title: string;
   tagline: string;
   description: string;
-  iconName: 'bookCheck' | 'languages' | 'cpu' | 'activity' | 'coins';
+  iconName: 'bookCheck' | 'languages' | 'cpu' | 'activity' | 'coins' | 'heartHandshake' | 'sparkles';
 }
 
 export interface AcademicHighlight {
@@ -70,7 +71,18 @@ export interface BlogPost {
   id: string;
   title: string;
   slug: string;
-  category: 'School News' | 'Education Tips' | 'School Events' | 'Parent Guide';
+  category:
+    | 'Islamic Education'
+    | 'Academic Life'
+    | 'School News'
+    | 'Student Development'
+    | 'Parenting and Education'
+    | 'Arabic Learning'
+    | 'Technology and Innovation'
+    | 'Sports'
+    | 'School Events'
+    | 'Character and Values'
+    | 'Announcements';
   excerpt: string;
   content: string;
   date: string;

@@ -1,21 +1,23 @@
 import React from 'react';
-import { BookCheck, Globe, Cpu, Activity, WalletCards } from 'lucide-react';
+import { BookCheck, HeartHandshake, Cpu, Globe, Activity, Sparkles } from 'lucide-react';
 import { WHY_CHOOSE_PILLARS } from '../../data/schoolData';
 
 export const WhyChooseUs: React.FC = () => {
-  const getIcon = (name: string) => {
-    switch (name) {
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
       case 'bookCheck':
         return BookCheck;
-      case 'languages':
-        return Globe;
+      case 'heartHandshake':
+        return HeartHandshake;
       case 'cpu':
         return Cpu;
+      case 'languages':
+        return Globe;
       case 'activity':
         return Activity;
-      case 'coins':
+      case 'sparkles':
       default:
-        return WalletCards;
+        return Sparkles;
     }
   };
 
@@ -38,28 +40,32 @@ export const WhyChooseUs: React.FC = () => {
             Why Choose Sealed Nectar?
           </h2>
           <p className="text-sm sm:text-base text-[#FAF7F2]/80">
-            We go beyond academics. We nurture the whole child with care, discipline and future-ready skills.
+            We believe that education should develop both the mind and the character. Our learners receive a balanced education that combines Western academic learning with Islamic education, moral values and practical skills.
           </p>
         </div>
 
-        {/* 5 Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {/* 6 Feature Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {WHY_CHOOSE_PILLARS.map((pillar) => {
             const Icon = getIcon(pillar.iconName);
             return (
               <div
                 key={pillar.id}
-                className="bg-[#5C1320] border border-[#801E2E] rounded-xl p-5 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-200 group"
+                className="bg-[#5C1320] border border-[#801E2E] rounded-xl p-6 flex flex-col items-start text-left transition-transform hover:-translate-y-1 duration-200 group"
               >
-                <div className="w-14 h-14 rounded-full bg-[#4F101A] border border-[#D49A24]/60 flex items-center justify-center text-[#D49A24] mb-4 group-hover:bg-[#D49A24] group-hover:text-[#4F101A] transition-colors shadow-xs">
-                  <Icon className="w-6 h-6" />
+                <div className="w-12 h-12 rounded-lg bg-[#4F101A] border border-[#D49A24]/60 flex items-center justify-center text-[#D49A24] mb-4 group-hover:bg-[#D49A24] group-hover:text-[#4F101A] transition-colors shadow-xs">
+                  <Icon className="w-5 h-5" />
                 </div>
 
-                <h3 className="font-display text-base font-bold text-white mb-2 leading-snug">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#D49A24] mb-1">
+                  {pillar.tagline}
+                </span>
+
+                <h3 className="font-display text-lg font-bold text-white mb-2 leading-snug">
                   {pillar.title}
                 </h3>
 
-                <p className="text-xs text-[#FAF7F2]/75 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#FAF7F2]/80 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>

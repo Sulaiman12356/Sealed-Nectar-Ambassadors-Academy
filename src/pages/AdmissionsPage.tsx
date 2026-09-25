@@ -248,12 +248,32 @@ export const AdmissionsPage: React.FC<AdmissionsPageProps> = ({ onNavigate }) =>
               </div>
 
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#221F1F] leading-tight mb-4 text-balance">
-                Begin Your Child's Admission Journey
+                Admissions Are Open
               </h1>
 
-              <p className="text-base sm:text-lg text-[#57534E] leading-relaxed mb-6 font-body">
-                Complete the application form below and provide accurate information so the school can review your application.
+              <p className="text-lg sm:text-xl font-serif italic text-[#6B1724] mb-3">
+                "Give your child an education that develops both knowledge and character."
               </p>
+
+              <p className="text-base text-[#57534E] leading-relaxed mb-6 font-body">
+                Sealed Nectar Ambassadors Academy provides a balanced educational experience combining Western academic learning, Islamic education, moral development and practical skills.
+              </p>
+
+              {/* Levels Banner */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-3 py-1 rounded-md text-xs font-bold uppercase bg-white border border-[#E8DFD5] text-[#6B1724]">
+                  Early Years
+                </span>
+                <span className="px-3 py-1 rounded-md text-xs font-bold uppercase bg-white border border-[#E8DFD5] text-[#6B1724]">
+                  Basic Education
+                </span>
+                <span className="px-3 py-1 rounded-md text-xs font-bold uppercase bg-white border border-[#E8DFD5] text-[#6B1724]">
+                  Junior Secondary
+                </span>
+                <span className="px-3 py-1 rounded-md text-xs font-bold uppercase bg-white border border-[#E8DFD5] text-[#C88A1A]">
+                  Senior Secondary
+                </span>
+              </div>
 
               {/* Public Real Database Admission Counter */}
               <div className="inline-flex flex-wrap items-center gap-4 p-3 bg-white border border-[#E8DFD5] rounded-xl text-xs sm:text-sm shadow-xs">

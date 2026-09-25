@@ -3,13 +3,17 @@ import { HeroSection } from '../components/home/HeroSection';
 import { TrustStrip } from '../components/home/TrustStrip';
 import { AboutSection } from '../components/home/AboutSection';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
+import { AcademicIslamicBalance } from '../components/home/AcademicIslamicBalance';
+import { IslamicEducationSection } from '../components/home/IslamicEducationSection';
+import { IslamicValuesSection } from '../components/home/IslamicValuesSection';
 import { AcademicLevels } from '../components/home/AcademicLevels';
+import { DayAtSNAASection } from '../components/home/DayAtSNAASection';
 import { AcademicHighlights } from '../components/home/AcademicHighlights';
+import { MuslimFamilySection } from '../components/home/MuslimFamilySection';
 import { CampusPreview } from '../components/home/CampusPreview';
 import { ProprietressSection } from '../components/home/ProprietressSection';
 import { AuthenticSchoolGallery } from '../components/home/AuthenticSchoolGallery';
 import { AdmissionsPreview } from '../components/home/AdmissionsPreview';
-import { SchoolValues } from '../components/home/SchoolValues';
 import { BlogPreview } from '../components/home/BlogPreview';
 import { CallToAction } from '../components/home/CallToAction';
 import { BlogPost } from '../types';
@@ -33,61 +37,78 @@ export const HomePage: React.FC<HomePageProps> = ({
 }) => {
   return (
     <div className="bg-[#FAF7F2]">
-      {/* Homepage Hero */}
+      {/* 1. Homepage Hero with God Conscious Learners positioning */}
       <HeroSection
         onOpenApply={() => onNavigate('/admissions')}
         onExplore={() => onNavigate('/about')}
       />
 
-      {/* Hero Trust Strip (5 Highlights) */}
+      {/* 2. Hero Trust Strip (Islamic & Western Balance, Character, Modern Skills) */}
       <TrustStrip />
 
-      {/* About the School */}
+      {/* 3. About the School & Two Foundations */}
       <AboutSection
         onLearnMore={() => onNavigate('/about')}
       />
 
-      {/* Why Choose Sealed Nectar (Dark Wine Band with 5 Pillars) */}
+      {/* 4. Why Choose Us (6 Pillars) */}
       <WhyChooseUs />
 
-      {/* Learning From Early Years to Secondary */}
+      {/* 5. Academic + Islamic Balance (Visual Combination) */}
+      <AcademicIslamicBalance
+        onExploreAcademics={() => onNavigate('/academics')}
+      />
+
+      {/* 6. Major Section: Growing With Islamic Knowledge */}
+      <IslamicEducationSection />
+
+      {/* 7. Character Is Part of Education (Islamic Values) */}
+      <IslamicValuesSection />
+
+      {/* 8. Learning From Early Years to Senior Secondary */}
       <AcademicLevels
         onViewCurriculum={() => onNavigate('/academics')}
       />
 
-      {/* Academic Highlights (4 Pillars + STEM Photography) */}
+      {/* 9. A Day at SNAA: Learning Beyond the Classroom */}
+      <DayAtSNAASection />
+
+      {/* 10. Academic Highlights (Multilingual, STEM, Vocational, Physical) */}
       <AcademicHighlights />
 
-      {/* Campus Facilities Preview */}
+      {/* 11. Muslim Family Positioning Section */}
+      <MuslimFamilySection
+        onOpenApply={() => onNavigate('/admissions')}
+        onOpenContact={onOpenContact}
+      />
+
+      {/* 12. Campus Facilities Preview */}
       <CampusPreview
         onExploreCampus={() => onNavigate('/campus')}
       />
 
-      {/* Principal / Proprietress Profile & Our Ethos */}
+      {/* 13. Leadership With Purpose: Proprietress Mrs. Muritala F.A. (Nee Adeosun) */}
       <ProprietressSection
         onMeetLeadership={() => onNavigate('/about')}
       />
 
-      {/* Authentic School Moments & Campus Life Gallery */}
+      {/* 14. Authentic School Moments & Campus Life Gallery */}
       <AuthenticSchoolGallery />
 
-      {/* Admissions Preview & Download Guide */}
+      {/* 15. Admissions Preview & Download Guide */}
       <AdmissionsPreview
         onStartAdmission={() => onNavigate('/admissions')}
         onDownloadGuide={onOpenGuide}
         onOpenAdmissionInfo={onOpenGuide}
       />
 
-      {/* School Values (Growing More Than Students) */}
-      <SchoolValues />
-
-      {/* Latest From Our School Blog */}
+      {/* 16. Latest From Our School Blog */}
       <BlogPreview
         onSelectPost={onSelectPost}
         onViewAllPosts={() => onNavigate('/blog')}
       />
 
-      {/* Pre-Footer Call to Action */}
+      {/* 17. Pre-Footer Call to Action */}
       <CallToAction
         onOpenApply={() => onNavigate('/admissions')}
         onOpenContact={onOpenContact}

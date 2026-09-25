@@ -105,7 +105,7 @@ export const SchoolCrest: React.FC<SchoolCrestProps> = ({
               lightMode ? 'text-[#FAF7F2]/80' : 'text-[#57534E]'
             }`}
           >
-            Ambassadors Academy
+            School &amp; College
           </span>
         </div>
       )}
