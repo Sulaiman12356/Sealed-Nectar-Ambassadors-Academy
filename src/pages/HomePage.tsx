@@ -60,7 +60,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* Campus Facilities Preview */}
       <CampusPreview
-        onExploreCampus={onOpenContact}
+        onExploreCampus={() => onNavigate('/campus')}
       />
 
       {/* Principal / Proprietress Profile & Our Ethos */}
@@ -84,10 +84,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* Latest From Our School Blog */}
       <BlogPreview
         onSelectPost={onSelectPost}
-        onViewAllPosts={() => {
-          const el = document.getElementById('blog');
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }}
+        onViewAllPosts={() => onNavigate('/blog')}
       />
 
       {/* Pre-Footer Call to Action */}

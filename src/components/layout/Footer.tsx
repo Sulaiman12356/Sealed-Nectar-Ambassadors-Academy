@@ -22,8 +22,10 @@ export const Footer: React.FC<FooterProps> = ({
     { path: '/academics', label: 'Academics' },
     { path: '/admissions', label: 'Admissions' },
     { path: '/admissions/status', label: 'Track Application' },
-    { path: '/#campus', label: 'Our Campus' },
-    { path: '/#blog', label: 'Blog & News' },
+    { path: '/campus', label: 'Our Campus' },
+    { path: '/blog', label: 'Blog & News' },
+    { path: '/contact', label: 'Contact School' },
+    { path: '/admin', label: 'Staff & Admin Portal' },
   ];
 
   return (

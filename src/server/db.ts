@@ -3,10 +3,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
-// Ensure data directory exists
-const DATA_DIR = path.resolve(process.cwd(), 'data');
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+// Ensure data directory exists with Vercel serverless /tmp fallback support
+let DATA_DIR = path.resolve(process.cwd(), 'data');
+try {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+} catch (_) {
+  // If running in a read-only environment (e.g. Vercel serverless lambda)
+  DATA_DIR = '/tmp';
 }
 
 const DB_PATH = path.join(DATA_DIR, 'snaa_school.db');

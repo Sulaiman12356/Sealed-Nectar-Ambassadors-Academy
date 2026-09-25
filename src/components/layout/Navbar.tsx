@@ -29,7 +29,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     { path: '/about', label: 'About Us' },
     { path: '/academics', label: 'Academics' },
     { path: '/admissions', label: 'Admissions' },
-    { path: '/admissions/status', label: 'Track Status' },
+    { path: '/campus', label: 'Campus' },
+    { path: '/blog', label: 'Blog & News' },
+    { path: '/contact', label: 'Contact' },
   ];
 
   const handleLinkClick = (path: string) => {
