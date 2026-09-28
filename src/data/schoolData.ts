@@ -7,8 +7,9 @@ import {
   BlogPost
 } from '../types';
 
-// School asset images using real uploaded authentic photographs from Sealed Nectar Ambassadors Academy
+// School asset images using real uploaded authentic photographs from Sealed Nectar Ambassadors School
 export const SCHOOL_IMAGES = {
+  schoolLogo: '/Real Logo sealed.jpeg',
   schoolBanner: '/sealednectarbillboard.png',
   heroStudents: '/images/boy_and_girl_sealed.jpg',
   childrenGroup: '/images/children_sealed.jpg',
@@ -45,7 +46,7 @@ export const AUTHENTIC_SCHOOL_GALLERY: GalleryImageItem[] = [
     title: 'Ambassadors in Official School Uniform',
     category: 'Pupils & Uniforms',
     src: '/images/boy_and_girl_sealed.jpg',
-    description: 'Male and female pupils of Sealed Nectar Ambassadors Academy dressed smartly in the official school uniform and modest hijab.',
+    description: 'Male and female pupils of Sealed Nectar Ambassadors School dressed smartly in the official school uniform and modest hijab.',
     tag: 'Official Uniform',
   },
   {
@@ -53,7 +54,7 @@ export const AUTHENTIC_SCHOOL_GALLERY: GalleryImageItem[] = [
     title: 'Joyful Learning & School Community',
     category: 'Pupils & Uniforms',
     src: '/images/children_sealed.jpg',
-    description: 'Pupils of Sealed Nectar Ambassadors Academy smiling together on campus, demonstrating camaraderie and friendship.',
+    description: 'Pupils of Sealed Nectar Ambassadors School smiling together on campus, demonstrating camaraderie and friendship.',
     tag: 'Pupil Life',
   },
   {
@@ -123,9 +124,9 @@ export const AUTHENTIC_SCHOOL_GALLERY: GalleryImageItem[] = [
 ];
 
 export const SCHOOL_INFO: SchoolInfo = {
-  name: 'Sealed Nectar Ambassadors School & College',
-  registeredName: 'Sealed Nectar Ambassadors Academy (SNAA)',
-  shortName: 'SNAA',
+  name: 'SEALED NECTAR AMBASSADORS SCHOOL',
+  registeredName: 'Sealed Nectar Ambassadors School',
+  shortName: 'SNAS',
   tagline: 'Morality and Knowledge',
   collegeMotto: 'Empowering Minds, Shaping the Future',
   establishedDate: '2015-01-05',
@@ -149,8 +150,8 @@ export const SCHOOL_INFO: SchoolInfo = {
       name: 'Mrs. Muritala F.A. (Nee Adeosun)',
       title: 'Proprietress / Owner',
       role: 'Founding Proprietress',
-      bio: 'Under the leadership of Mrs. Muritala F.A. (Nee Adeosun), Sealed Nectar Ambassadors Academy continues to pursue an educational vision centred on knowledge, character development and the total development of every child.',
-      quote: 'At Sealed Nectar Ambassadors Academy, we believe that education should develop both the mind and the character. Our learners receive a balanced education that combines Western academic learning with Islamic education, moral values and practical skills.',
+      bio: 'Under the leadership of Mrs. Muritala F.A. (Nee Adeosun), Sealed Nectar Ambassadors School continues to pursue an educational vision centred on knowledge, character development and the total development of every child.',
+      quote: 'At Sealed Nectar Ambassadors School, we believe that education should develop both the mind and the character. Our learners receive a balanced education that combines Western academic learning with Islamic education, moral values and practical skills.',
       image: SCHOOL_IMAGES.proprietress,
     },
   },
@@ -385,11 +386,11 @@ export const ACADEMIC_JOURNEY = [
 export const ACADEMICS_FAQ = [
   {
     question: 'What educational levels does the school operate?',
-    answer: 'Sealed Nectar Ambassadors School & College provides a complete educational pathway from Early Years (Crèche and Kindergarten) through Basic Education (Nursery and Primary 1–6), Junior Secondary School (JSS 1–3), and Senior Secondary School (SS 1–3).',
+    answer: 'Sealed Nectar Ambassadors School provides a complete educational pathway from Early Years (Crèche and Kindergarten) through Basic Education (Nursery and Primary 1–6), Junior Secondary School (JSS 1–3), and Senior Secondary School (SS 1–3).',
   },
   {
     question: 'How does the school combine Islamic and Western education?',
-    answer: 'At Sealed Nectar Ambassadors Academy, Western academic education provides our learners with academic knowledge, critical thinking and practical skills, while Islamic education instils moral values, faith, good manners and responsibility. The two areas work together to develop the whole child.',
+    answer: 'At Sealed Nectar Ambassadors School, Western academic education provides our learners with academic knowledge, critical thinking and practical skills, while Islamic education instils moral values, faith, good manners and responsibility. The two areas work together to develop the whole child.',
   },
   {
     question: 'Which classes are currently available for admission?',
@@ -450,8 +451,8 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Nurturing Knowledge and Good Character in the Growing Child',
     slug: 'nurturing-knowledge-and-character',
     category: 'Islamic Education',
-    excerpt: 'At Sealed Nectar Ambassadors Academy, we believe education should develop both the mind and character through balanced Islamic and academic learning.',
-    content: '<p>At Sealed Nectar Ambassadors Academy, we believe that education should develop both the mind and the character. Our learners receive a balanced education that combines Western academic learning with Islamic education, moral values and practical skills.</p><p>Western education gives our learners the academic knowledge, critical thinking and practical skills needed to participate confidently in the modern world. Islamic education helps them develop faith, moral values, discipline, good manners and a strong sense of responsibility.</p>',
+    excerpt: 'At Sealed Nectar Ambassadors School, we believe education should develop both the mind and character through balanced Islamic and academic learning.',
+    content: '<p>At Sealed Nectar Ambassadors School, we believe that education should develop both the mind and the character. Our learners receive a balanced education that combines Western academic learning with Islamic education, moral values and practical skills.</p><p>Western education gives our learners the academic knowledge, critical thinking and practical skills needed to participate confidently in the modern world. Islamic education helps them develop faith, moral values, discipline, good manners and a strong sense of responsibility.</p>',
     date: '2026-03-10',
     formattedDate: '10 March 2026',
     readTime: '4 min read',
@@ -459,11 +460,11 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 'post-2',
-    title: 'Why Global Languages Matter: Arabic and Mandarin Chinese at SNAA',
+    title: 'Why Global Languages Matter: Arabic and Mandarin Chinese at SNAS',
     slug: 'why-global-languages-matter',
     category: 'Arabic Learning',
     excerpt: 'Discover how introducing learners early to Arabic and Mandarin Chinese builds communication confidence and mental agility.',
-    content: '<p>Language opens doors to cultural empathy and global career pathways. At Sealed Nectar Ambassadors Academy, our pupils learn English, Arabic and conversational Mandarin Chinese side by side.</p>',
+    content: '<p>Language opens doors to cultural empathy and global career pathways. At Sealed Nectar Ambassadors School, our pupils learn English, Arabic and conversational Mandarin Chinese side by side.</p>',
     date: '2026-02-18',
     formattedDate: '18 February 2026',
     readTime: '3 min read',

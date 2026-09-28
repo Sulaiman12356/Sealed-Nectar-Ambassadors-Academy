@@ -31,7 +31,7 @@ export const IslamicValuesSection: React.FC = () => {
           </h2>
 
           <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
-            At Sealed Nectar Ambassadors Academy, knowledge without good character is incomplete. We instil practical values that guide children at school, at home, and in society.
+            At Sealed Nectar Ambassadors School, knowledge without good character is incomplete. We instil practical values that guide children at school, at home, and in society.
           </p>
         </div>
 

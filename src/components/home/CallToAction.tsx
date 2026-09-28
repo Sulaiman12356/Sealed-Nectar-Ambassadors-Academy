@@ -14,6 +14,15 @@ export const CallToAction: React.FC<CallToActionProps> = ({
     <section className="py-16 sm:py-20 bg-[#FAF7F2] border-t border-[#E8DFD5] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#6B1724] rounded-3xl p-8 sm:p-12 lg:p-16 text-white text-center relative overflow-hidden shadow-md">
+          {/* School campus background image filling all corners */}
+          <img
+            src="/sealednectarbillboard.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none select-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#6B1724]/90 via-[#6B1724]/75 to-[#6B1724]/90 pointer-events-none" />
+
           {/* Subtle decorative background ring */}
           <div
             className="absolute -top-24 -right-24 w-80 h-80 rounded-full border border-[#D49A24]/30 pointer-events-none"

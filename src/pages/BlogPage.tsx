@@ -218,7 +218,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate, initialSlug }) =
           {/* CTA at end of article */}
           <div className="p-6 sm:p-8 bg-[#6B1724] text-white rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <h3 className="font-display text-lg sm:text-xl font-bold">Discover Sealed Nectar Ambassadors Academy</h3>
+              <h3 className="font-display text-lg sm:text-xl font-bold">Discover Sealed Nectar Ambassadors School</h3>
               <p className="text-xs sm:text-sm text-white/80 mt-1">Providing balanced Islamic upbringing, global languages, and rigorous academics in Sagamu.</p>
             </div>
             <button
@@ -254,7 +254,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate, initialSlug }) =
           </h1>
 
           <p className="text-base sm:text-lg text-[#57534E] leading-relaxed mb-8 font-body">
-            Stay connected with activities, achievements, announcements and stories from Sealed Nectar Ambassadors Academy.
+            Stay connected with activities, achievements, announcements and stories from Sealed Nectar Ambassadors School.
           </p>
 
           {/* Search Form */}

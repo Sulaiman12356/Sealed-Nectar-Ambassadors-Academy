@@ -40,9 +40,9 @@ export const AdmissionsPreview: React.FC<AdmissionsPreviewProps> = ({
               <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#F4EFEB] border border-[#E8DFD5]">
                 <ImageWithFallback
                   src={SCHOOL_IMAGES.heroStudents}
-                  alt="Students at Sealed Nectar Ambassadors Academy"
+                  alt="Students at Sealed Nectar Ambassadors School"
                   className="w-full h-full object-cover"
-                  fallbackText="Enrolling students at SNAA"
+                  fallbackText="Enrolling students at SNAS"
                 />
               </div>
             </div>

@@ -49,11 +49,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               </div>
 
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#221F1F] leading-tight mb-4 text-balance">
-                About Sealed Nectar Ambassadors Academy
+                About Sealed Nectar Ambassadors School
               </h1>
 
               <p className="text-base sm:text-lg text-[#57534E] leading-relaxed mb-6 max-w-2xl font-body">
-                Sealed Nectar Ambassadors Academy is a Muslim educational institution committed to developing children through a balanced combination of Islamic and Western education.
+                Sealed Nectar Ambassadors School is a Muslim educational institution committed to developing children through a balanced combination of Islamic and Western education.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs text-[#57534E] pb-4 border-b border-[#E8DFD5] w-full">
@@ -75,9 +75,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-[#F4EFEB]">
                   <ImageWithFallback
                     src={SCHOOL_IMAGES.classroomStudents}
-                    alt="Sealed Nectar Ambassadors Academy students engaged in class"
+                    alt="Sealed Nectar Ambassadors School students engaged in class"
                     className="w-full h-full object-cover"
-                    fallbackText="Students studying at Sealed Nectar Ambassadors Academy"
+                    fallbackText="Students studying at Sealed Nectar Ambassadors School"
                   />
                 </div>
                 <div className="p-3 text-left">
@@ -105,7 +105,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </h2>
           <div className="p-6 sm:p-8 rounded-2xl bg-[#FAF7F2] border border-[#E8DFD5] text-left sm:text-center text-sm sm:text-base text-[#57534E] leading-relaxed shadow-xs space-y-4">
             <p className="font-serif italic text-base sm:text-lg text-[#6B1724]">
-              "At Sealed Nectar Ambassadors Academy, we believe that education should develop both the mind and the character. Our learners receive a balanced education that combines Western academic learning with Islamic education, moral values and practical skills."
+              "At Sealed Nectar Ambassadors School, we believe that education should develop both the mind and the character. Our learners receive a balanced education that combines Western academic learning with Islamic education, moral values and practical skills."
             </p>
             <p>
               Established on <strong className="text-[#221F1F]">5 January 2015</strong>, the school provides a conducive learning environment where children can develop academically, morally, socially, intellectually and spiritually.
@@ -241,7 +241,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 </p>
 
                 <p className="text-sm sm:text-base text-[#57534E] leading-relaxed mb-6">
-                  Under the leadership of Mrs. Muritala F.A. (Nee Adeosun), Sealed Nectar Ambassadors Academy continues to pursue an educational vision centred on knowledge, character development and the total development of every child.
+                  Under the leadership of Mrs. Muritala F.A. (Nee Adeosun), Sealed Nectar Ambassadors School continues to pursue an educational vision centred on knowledge, character development and the total development of every child.
                 </p>
 
                 <div className="p-5 rounded-xl bg-white border border-[#E8DFD5] text-xs sm:text-sm text-[#221F1F] font-serif italic mb-6">

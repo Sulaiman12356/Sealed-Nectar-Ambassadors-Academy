@@ -256,7 +256,7 @@ export const AdmissionsPage: React.FC<AdmissionsPageProps> = ({ onNavigate }) =>
               </p>
 
               <p className="text-base text-[#57534E] leading-relaxed mb-6 font-body">
-                Sealed Nectar Ambassadors Academy provides a balanced educational experience combining Western academic learning, Islamic education, moral development and practical skills.
+                Sealed Nectar Ambassadors School provides a balanced educational experience combining Western academic learning, Islamic education, moral development and practical skills.
               </p>
 
               {/* Levels Banner */}

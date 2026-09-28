@@ -81,7 +81,7 @@ export const AdmissionApplicationModal: React.FC<AdmissionApplicationModalProps>
                 Online Admission Application
               </h2>
               <p className="text-xs text-[#FAF7F2]/80">
-                Sealed Nectar Ambassadors Academy · Sagamu, Ogun State
+                Sealed Nectar Ambassadors School · Sagamu, Ogun State
               </p>
             </div>
           </div>
@@ -377,7 +377,7 @@ export const AdmissionApplicationModal: React.FC<AdmissionApplicationModalProps>
                   Application Received Successfully
                 </h3>
                 <p className="text-xs sm:text-sm text-[#57534E] mt-1 max-w-md mx-auto">
-                  Thank you for applying to Sealed Nectar Ambassadors Academy. Your child's enrollment file has been recorded.
+                  Thank you for applying to Sealed Nectar Ambassadors School. Your child's enrollment file has been recorded.
                 </p>
               </div>
 

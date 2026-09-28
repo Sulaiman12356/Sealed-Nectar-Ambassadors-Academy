@@ -29,7 +29,7 @@ export const CurriculumModal: React.FC<CurriculumModalProps> = ({
                 Academic Curriculum & Pathways
               </h2>
               <p className="text-xs text-[#FAF7F2]/80">
-                Sealed Nectar Ambassadors Academy · Dual Curriculum Framework
+                Sealed Nectar Ambassadors School · Dual Curriculum Framework
               </p>
             </div>
           </div>

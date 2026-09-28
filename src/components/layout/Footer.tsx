@@ -134,7 +134,7 @@ export const Footer: React.FC<FooterProps> = ({
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Follow Sealed Nectar Ambassadors Academy on Facebook"
+                aria-label="Follow Sealed Nectar Ambassadors School on Facebook"
                 className="w-9 h-9 rounded-lg bg-[#5C1320] border border-[#801E2E] flex items-center justify-center text-[#D49A24] hover:bg-[#D49A24] hover:text-[#4F101A] transition-colors"
               >
                 <Facebook className="w-4 h-4" />
@@ -143,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Follow Sealed Nectar Ambassadors Academy on Instagram"
+                aria-label="Follow Sealed Nectar Ambassadors School on Instagram"
                 className="w-9 h-9 rounded-lg bg-[#5C1320] border border-[#801E2E] flex items-center justify-center text-[#D49A24] hover:bg-[#D49A24] hover:text-[#4F101A] transition-colors"
               >
                 <Instagram className="w-4 h-4" />
@@ -151,9 +151,9 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div className="mt-6 pt-4 border-t border-[#801E2E]/60 text-[11px] text-[#FAF7F2]/60">
-              <span>Alternative / Registered:</span>
+              <span>Official Institutional Name:</span>
               <p className="text-[#FAF7F2]/90 font-medium mt-0.5">
-                Sealed Nectar Ambassadors Academy (SNAA)
+                SEALED NECTAR AMBASSADORS SCHOOL
               </p>
             </div>
           </div>
@@ -164,7 +164,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="bg-[#3D0C14] border-t border-[#6B1724] py-4 px-4 sm:px-6 lg:px-8 text-xs text-[#FAF7F2]/70">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <p>
-            © {currentYear} Sealed Nectar Ambassadors Academy. All rights reserved.
+            © {currentYear} Sealed Nectar Ambassadors School. All rights reserved.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs">

@@ -47,7 +47,7 @@ export const AcademicIslamicBalance: React.FC<AcademicIslamicBalanceProps> = ({ 
           </h2>
 
           <p className="text-base sm:text-lg text-[#57534E]">
-            At Sealed Nectar Ambassadors Academy, academic knowledge and sound character work hand in hand to nurture well-rounded, capable leaders.
+            At Sealed Nectar Ambassadors School, academic knowledge and sound character work hand in hand to nurture well-rounded, capable leaders.
           </p>
         </div>
 

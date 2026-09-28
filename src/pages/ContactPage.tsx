@@ -75,7 +75,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
 
   const whatsappCleanPhone = '2349017530688';
   const whatsappUrl = `https://wa.me/${whatsappCleanPhone}?text=${encodeURIComponent(
-    'Assalamu Alaikum. I am inquiring about admissions and academic programmes at Sealed Nectar Ambassadors Academy.'
+    'Assalamu Alaikum. I am inquiring about admissions and academic programmes at Sealed Nectar Ambassadors School.'
   )}`;
 
   return (
@@ -126,7 +126,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                 <div className="flex items-start gap-3 text-xs sm:text-sm text-[#57534E] leading-relaxed mb-4">
                   <MapPin className="w-5 h-5 text-[#6B1724] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[#221F1F] block mb-1">Sealed Nectar Ambassadors Academy (SNAA)</strong>
+                    <strong className="text-[#221F1F] block mb-1">SEALED NECTAR AMBASSADORS SCHOOL</strong>
                     <p>4, Azeez Lamidi Street, Behind Loto Ewu-Oliwo, Makun, Sagamu, Ogun State, Nigeria.</p>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       Message Sent Successfully
                     </h4>
                     <p className="text-xs sm:text-sm text-[#57534E] mb-4 leading-relaxed">
-                      Thank you for contacting Sealed Nectar Ambassadors Academy. A member of our admissions team will respond shortly.
+                      Thank you for contacting Sealed Nectar Ambassadors School. A member of our admissions team will respond shortly.
                     </p>
                     <button
                       onClick={() => setSubmitSuccess(false)}

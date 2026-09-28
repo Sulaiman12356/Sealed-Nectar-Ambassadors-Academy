@@ -418,9 +418,9 @@ if (!existingSchoolInfo) {
     )
   `).run(
     'default',
-    'Sealed Nectar Ambassadors School & College',
-    'Sealed Nectar Ambassadors Academy (SNAA)',
-    'SNAA',
+    'SEALED NECTAR AMBASSADORS SCHOOL',
+    'Sealed Nectar Ambassadors School',
+    'SNAS',
     'Morality and Knowledge',
     'Empowering Minds, Shaping the Future',
     '2015-01-05',
@@ -451,7 +451,7 @@ if (!existingSchoolInfo) {
     'Mrs. Muritala F.A. (Nee Adeosun)',
     'Proprietress / Owner',
     'Founding Proprietress',
-    'Mrs. Muritala F.A. (Nee Adeosun) is the proprietor of Sealed Nectar Ambassadors Academy. Her vision for the school is centred on providing children with a strong educational foundation while supporting their academic growth, character development and personal confidence.',
+    'Mrs. Muritala F.A. (Nee Adeosun) is the proprietor of Sealed Nectar Ambassadors School. Her vision for the school is centred on providing children with a strong educational foundation while supporting their academic growth, character development and personal confidence.',
     'Every child has a unique potential, and it is our duty to help them discover and achieve it through knowledge, faith and dedication.',
     '/images/miss_award.jpg',
     'https://facebook.com',
@@ -459,6 +459,19 @@ if (!existingSchoolInfo) {
     '+2349017530688',
     new Date().toISOString()
   );
+}
+
+// Ensure the profile table always reflects the real school name
+try {
+  db.prepare(`
+    UPDATE school_profile_cms 
+    SET name = 'SEALED NECTAR AMBASSADORS SCHOOL', 
+        registered_name = 'Sealed Nectar Ambassadors School', 
+        short_name = 'SNAS'
+    WHERE id = 'default'
+  `).run();
+} catch (e) {
+  // Ignored if table not yet created
 }
 
 // Seed Blog Posts CMS if empty
@@ -472,7 +485,7 @@ if (!existingBlog) {
       category: 'School News',
       featured_image: '/images/children_sealed.jpg',
       excerpt: 'A review of recent milestones in literacy, mathematics and exemplary conduct displayed across our basic classes.',
-      content: '<h2>A Term of Remarkable Progress</h2><p>At Sealed Nectar Ambassadors Academy, we celebrate every incremental step of growth our pupils take. This term has witnessed remarkable dedication in both academics and moral conduct. Our teachers have continued their personalized mentoring to ensure every learner progresses with clarity and joy.</p><h3>Academic & Moral Highlights</h3><p>Pupils across primary and junior secondary divisions participated in structured evaluations with notable performance in mathematics, reading fluency, and Arabic recitation. We thank our parents for their continued partnership.</p>',
+      content: '<h2>A Term of Remarkable Progress</h2><p>At Sealed Nectar Ambassadors School, we celebrate every incremental step of growth our pupils take. This term has witnessed remarkable dedication in both academics and moral conduct. Our teachers have continued their personalized mentoring to ensure every learner progresses with clarity and joy.</p><h3>Academic & Moral Highlights</h3><p>Pupils across primary and junior secondary divisions participated in structured evaluations with notable performance in mathematics, reading fluency, and Arabic recitation. We thank our parents for their continued partnership.</p>',
       author: 'Principal & Proprietress',
       publication_date: '2025-04-12',
       status: 'published',
@@ -484,7 +497,7 @@ if (!existingBlog) {
       category: 'Education Tips',
       featured_image: '/images/chinese_training_student.jpg',
       excerpt: 'How early introduction to Mandarin Chinese and Arabic equips our pupils with global language fluency and cultural confidence.',
-      content: '<h2>Opening Global Doors Early</h2><p>Language is a doorway to the global future. At Sealed Nectar Ambassadors Academy, students begin learning Mandarin Chinese alongside English and Arabic. Early multilingual exposure trains auditory discrimination, problem-solving, and international cultural appreciation.</p><h3>Why Early Language Immersion Works</h3><p>Studies show children acquire tonal languages like Mandarin naturally before adolescence. Our dedicated classes integrate pronunciation drills, character recognition, and interactive conversational songs.</p>',
+      content: '<h2>Opening Global Doors Early</h2><p>Language is a doorway to the global future. At Sealed Nectar Ambassadors School, students begin learning Mandarin Chinese alongside English and Arabic. Early multilingual exposure trains auditory discrimination, problem-solving, and international cultural appreciation.</p><h3>Why Early Language Immersion Works</h3><p>Studies show children acquire tonal languages like Mandarin naturally before adolescence. Our dedicated classes integrate pronunciation drills, character recognition, and interactive conversational songs.</p>',
       author: 'Department of Languages',
       publication_date: '2025-04-05',
       status: 'published',
@@ -527,7 +540,7 @@ if (!existingGallery) {
       title: 'Ambassadors in Official School Uniform',
       category: 'Students',
       src: '/images/boy_and_girl_sealed.jpg',
-      description: 'Male and female pupils of Sealed Nectar Ambassadors Academy dressed smartly in the official school uniform and hijab.',
+      description: 'Male and female pupils of Sealed Nectar Ambassadors School dressed smartly in the official school uniform and hijab.',
       tag: 'Official Uniform',
       sort_order: 1,
     },
@@ -536,7 +549,7 @@ if (!existingGallery) {
       title: 'Joyful Learning & School Community',
       category: 'Students',
       src: '/images/children_sealed.jpg',
-      description: 'Pupils of Sealed Nectar Ambassadors Academy smiling together on campus, demonstrating camaraderie and friendship.',
+      description: 'Pupils of Sealed Nectar Ambassadors School smiling together on campus, demonstrating camaraderie and friendship.',
       tag: 'Pupil Life',
       sort_order: 2,
     },
@@ -656,7 +669,7 @@ if (!existingStaff) {
       name: 'Mrs. Muritala F.A. (Nee Adeosun)',
       position: 'Proprietress & Educational Director',
       photograph: '/images/miss_award.jpg',
-      biography: 'Founding visionary of Sealed Nectar Ambassadors Academy, passionately guiding instructional quality, Islamic character, and holistic child development.',
+      biography: 'Founding visionary of Sealed Nectar Ambassadors School, passionately guiding instructional quality, Islamic character, and holistic child development.',
       qualifications: 'B.Ed, Certified Educational Administrator',
       subjects: 'Educational Leadership, Moral Studies',
       sort_order: 1,

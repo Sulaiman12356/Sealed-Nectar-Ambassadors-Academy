@@ -72,9 +72,9 @@ export const AcademicHighlights: React.FC = () => {
               <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-[#F4EFEB]">
                 <ImageWithFallback
                   src={SCHOOL_IMAGES.chineseTraining}
-                  alt="Sealed Nectar Ambassadors Academy student during Mandarin Chinese training"
+                  alt="Sealed Nectar Ambassadors School student during Mandarin Chinese training"
                   className="w-full h-full object-cover"
-                  fallbackText="Student participating in Mandarin Chinese program at SNAA"
+                  fallbackText="Student participating in Mandarin Chinese program at SNAS"
                 />
                 <div className="absolute top-3 left-3">
                   <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/95 text-[#6B1724] shadow-sm backdrop-blur-xs">

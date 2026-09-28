@@ -46,7 +46,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
             <School className="w-6 h-6" />
           </div>
           <span className="text-xs font-semibold text-[#6B1724] uppercase tracking-wider mb-1">
-            Sealed Nectar Ambassadors Academy
+            SEALED NECTAR AMBASSADORS SCHOOL
           </span>
           <p className="text-xs text-[#57534E] max-w-xs line-clamp-2">
             {fallbackText || alt}

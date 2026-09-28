@@ -32,7 +32,7 @@ export const AdmissionGuideModal: React.FC<AdmissionGuideModalProps> = ({
                 Admission Guide & Prospectus
               </h2>
               <p className="text-xs text-[#FAF7F2]/80">
-                Sealed Nectar Ambassadors Academy · Academic Enrollment Guide
+                Sealed Nectar Ambassadors School · Academic Enrollment Guide
               </p>
             </div>
           </div>
@@ -64,7 +64,7 @@ export const AdmissionGuideModal: React.FC<AdmissionGuideModalProps> = ({
                 Approved Academy Uniform & Attire
               </h4>
               <p className="text-[11px] text-[#57534E] mt-0.5 leading-snug">
-                Official uniform sample for male and female pupils admitted to Sealed Nectar Ambassadors Academy.
+                Official uniform sample for male and female pupils admitted to Sealed Nectar Ambassadors School.
               </p>
             </div>
           </div>

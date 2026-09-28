@@ -23,7 +23,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
                 {isPrivacy ? 'Privacy & Data Protection Policy' : 'Terms of Educational Service'}
               </h2>
               <p className="text-xs text-[#FAF7F2]/80">
-                Sealed Nectar Ambassadors Academy · Governance
+                Sealed Nectar Ambassadors School · Governance
               </p>
             </div>
           </div>
@@ -40,7 +40,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           {isPrivacy ? (
             <>
               <p className="font-medium text-[#221F1F]">
-                Sealed Nectar Ambassadors Academy (SNAA) is committed to safeguarding the personal privacy of our pupils, parents, and website visitors.
+                SEALED NECTAR AMBASSADORS SCHOOL (SNAS) is committed to safeguarding the personal privacy of our pupils, parents, and website visitors.
               </p>
               <h3 className="font-bold text-[#6B1724] uppercase tracking-wider text-xs pt-2">
                 1. Information We Collect
@@ -64,7 +64,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           ) : (
             <>
               <p className="font-medium text-[#221F1F]">
-                By accessing this portal and submitting applications to Sealed Nectar Ambassadors Academy, parents and guardians agree to our institutional policies.
+                By accessing this portal and submitting applications to Sealed Nectar Ambassadors School, parents and guardians agree to our institutional policies.
               </p>
               <h3 className="font-bold text-[#6B1724] uppercase tracking-wider text-xs pt-2">
                 1. Admissions Integrity

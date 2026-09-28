@@ -93,7 +93,7 @@ export const ApplicationStatusPage: React.FC<ApplicationStatusPageProps> = ({ on
       case 'Interview':
         return 'Your child has been scheduled for the introductory classroom placement assessment at 4, Azeez Lamidi Street, Makun, Sagamu.';
       case 'Accepted':
-        return 'Congratulations! Your child has been offered admission to Sealed Nectar Ambassadors Academy. Please contact the administration office for enrollment clearance.';
+        return 'Congratulations! Your child has been offered admission to Sealed Nectar Ambassadors School. Please contact the administration office for enrollment clearance.';
       case 'Enrolled':
         return 'Enrollment complete. Welcome to the Sealed Nectar family!';
       case 'Declined':
@@ -141,7 +141,7 @@ export const ApplicationStatusPage: React.FC<ApplicationStatusPageProps> = ({ on
                 Official Admissions Desk
               </span>
               <h2 className="font-display text-sm font-bold text-[#221F1F]">
-                Sealed Nectar Ambassadors Academy Verification
+                Sealed Nectar Ambassadors School Verification
               </h2>
             </div>
           </div>

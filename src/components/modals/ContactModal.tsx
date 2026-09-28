@@ -43,7 +43,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 Contact & Campus Visit
               </h2>
               <p className="text-xs text-[#FAF7F2]/80">
-                Sealed Nectar Ambassadors Academy · Administration Office
+                Sealed Nectar Ambassadors School · Administration Office
               </p>
             </div>
           </div>
@@ -173,7 +173,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 Message Delivered
               </h3>
               <p className="text-xs sm:text-sm text-[#57534E] max-w-sm mx-auto">
-                Thank you for contacting Sealed Nectar Ambassadors Academy. A school administrative officer will respond shortly via phone or email.
+                Thank you for contacting Sealed Nectar Ambassadors School. A school administrative officer will respond shortly via phone or email.
               </p>
               <div className="pt-3">
                 <button

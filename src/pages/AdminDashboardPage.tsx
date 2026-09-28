@@ -901,7 +901,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 Admin CMS
               </span>
               <span className="font-display font-bold text-xs text-[#221F1F]">
-                Sealed Nectar Ambassadors Academy
+                SEALED NECTAR AMBASSADORS SCHOOL
               </span>
             </div>
           </div>

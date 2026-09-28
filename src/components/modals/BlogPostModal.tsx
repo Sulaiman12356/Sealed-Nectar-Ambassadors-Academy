@@ -52,7 +52,7 @@ export const BlogPostModal: React.FC<BlogPostModalProps> = ({ post, onClose }) =
               <span>{post.readTime}</span>
             </div>
             <span>·</span>
-            <span className="text-[#6B1724] font-medium">By SNAA Academic Editorial</span>
+            <span className="text-[#6B1724] font-medium">By SNAS Academic Editorial</span>
           </div>
 
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#221F1F] mb-4 leading-tight">
@@ -66,7 +66,7 @@ export const BlogPostModal: React.FC<BlogPostModalProps> = ({ post, onClose }) =
           <div className="prose text-sm text-[#57534E] leading-relaxed space-y-4">
             <p>{post.content}</p>
             <p>
-              Education at Sealed Nectar Ambassadors Academy represents a holistic blend of structured cognitive mastery and sound moral training. Every initiative, whether in language acquisition, STEM experimentation, or physical athletics, is designed to ensure our learners emerge ready to contribute responsibly to society.
+              Education at Sealed Nectar Ambassadors School represents a holistic blend of structured cognitive mastery and sound moral training. Every initiative, whether in language acquisition, STEM experimentation, or physical athletics, is designed to ensure our learners emerge ready to contribute responsibly to society.
             </p>
             <p>
               For more information on school programs or to schedule a visit to our classrooms in Makun, Sagamu, please reach out to our administration office.

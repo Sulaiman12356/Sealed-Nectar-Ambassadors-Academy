@@ -33,7 +33,7 @@ export const MuslimFamilySection: React.FC<MuslimFamilySectionProps> = ({
             </h2>
 
             <p className="text-base sm:text-lg text-[#57534E] leading-relaxed mb-6">
-              For families looking for an environment where children can pursue academic knowledge while growing with Islamic values, Sealed Nectar Ambassadors Academy provides a learning community built around knowledge, character and responsibility.
+              For families looking for an environment where children can pursue academic knowledge while growing with Islamic values, Sealed Nectar Ambassadors School provides a learning community built around knowledge, character and responsibility.
             </p>
 
             <div className="space-y-3 mb-8">

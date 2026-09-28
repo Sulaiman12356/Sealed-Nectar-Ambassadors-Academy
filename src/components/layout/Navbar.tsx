@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={() => handleLinkClick('/')}
             className="flex items-center text-left focus-visible:outline-2 focus-visible:outline-[#6B1724] rounded-lg p-1 transition-opacity hover:opacity-90"
-            aria-label="Sealed Nectar Ambassadors Academy Home"
+            aria-label="Sealed Nectar Ambassadors School Home"
           >
             <SchoolCrest size="md" />
           </button>

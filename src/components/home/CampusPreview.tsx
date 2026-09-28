@@ -49,7 +49,7 @@ export const CampusPreview: React.FC<CampusPreviewProps> = ({ onExploreCampus })
                   src={facility.image}
                   alt={facility.title}
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
-                  fallbackText={`${facility.title} at Sealed Nectar Ambassadors Academy`}
+                  fallbackText={`${facility.title} at Sealed Nectar Ambassadors School`}
                 />
               </div>
 
