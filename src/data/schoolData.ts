@@ -9,6 +9,7 @@ import {
 
 // School asset images using real uploaded authentic photographs from Sealed Nectar Ambassadors Academy
 export const SCHOOL_IMAGES = {
+  schoolBanner: '/sealednectarbillboard.png',
   heroStudents: '/images/boy_and_girl_sealed.jpg',
   childrenGroup: '/images/children_sealed.jpg',
   chineseTraining: '/images/chinese_training_student.jpg',
