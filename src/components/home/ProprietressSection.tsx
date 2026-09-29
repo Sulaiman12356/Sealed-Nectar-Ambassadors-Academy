@@ -1,7 +1,9 @@
 import React from 'react';
-import { ArrowRight, Quote, Users, HeartHandshake, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Quote, Users, HeartHandshake, ShieldCheck, MessageCircle } from 'lucide-react';
 import { ImageWithFallback } from '../common/ImageWithFallback';
 import { SCHOOL_INFO } from '../../data/schoolData';
+import { WhatsAppSectionCTA } from '../common/WhatsAppSectionCTA';
+import { WHATSAPP_URL, WHATSAPP_PHONE } from '../common/WhatsAppFloatingCTA';
 
 interface ProprietressSectionProps {
   onMeetLeadership: () => void;
@@ -69,7 +71,7 @@ export const ProprietressSection: React.FC<ProprietressSectionProps> = ({ onMeet
                 </div>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap items-center gap-3">
                 <button
                   onClick={onMeetLeadership}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-white bg-[#6B1724] hover:bg-[#52111B] active:bg-[#3E0A12] transition-colors focus-visible:outline-2 focus-visible:outline-[#6B1724]"
@@ -77,6 +79,16 @@ export const ProprietressSection: React.FC<ProprietressSectionProps> = ({ onMeet
                   <span>Meet Our Leadership</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
+
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] transition-all shadow-md"
+                >
+                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <span>Chat With Proprietress ({WHATSAPP_PHONE})</span>
+                </a>
               </div>
             </div>
           </div>
@@ -165,6 +177,12 @@ export const ProprietressSection: React.FC<ProprietressSectionProps> = ({ onMeet
             </div>
           </div>
         </div>
+
+        {/* Direct WhatsApp Consultation with Proprietress */}
+        <WhatsAppSectionCTA
+          customTitle="Speak Directly with Proprietress Mrs. Muritala F.A."
+          customSubtitle="Get guidance on class placement, crèche care, secondary school subjects, and tuition assistance."
+        />
       </div>
     </section>
   );

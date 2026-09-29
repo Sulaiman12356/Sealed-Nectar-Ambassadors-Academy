@@ -27,6 +27,7 @@ import { BlogPostModal } from './components/modals/BlogPostModal';
 import { CurriculumModal } from './components/modals/CurriculumModal';
 import { ContactModal } from './components/modals/ContactModal';
 import { LegalModal } from './components/modals/LegalModal';
+import { WhatsAppFloatingCTA } from './components/common/WhatsAppFloatingCTA';
 import { BlogPost } from './types';
 
 export default function App() {
@@ -193,6 +194,9 @@ export default function App() {
         type={legalModalType}
         onClose={() => setLegalModalType(null)}
       />
+
+      {/* Persistent Direct WhatsApp Call-to-Action for enquiries with Proprietress */}
+      <WhatsAppFloatingCTA />
     </div>
   );
 }

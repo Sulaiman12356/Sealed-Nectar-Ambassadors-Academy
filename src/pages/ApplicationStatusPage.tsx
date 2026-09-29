@@ -131,8 +131,8 @@ export const ApplicationStatusPage: React.FC<ApplicationStatusPageProps> = ({ on
           <div className="flex items-center gap-3 pb-5 mb-5 border-b border-[#E8DFD5]">
             <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-[#E8DFD5]">
               <img
-                src="/images/boy_and_girl_sealed.jpg"
-                alt="Sealed Nectar Ambassador"
+                src="/images/certificate.jpeg"
+                alt="Sealed Nectar Academic Record"
                 className="w-full h-full object-cover"
               />
             </div>

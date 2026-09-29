@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { ImageWithFallback } from '../common/ImageWithFallback';
 import { SCHOOL_IMAGES } from '../../data/schoolData';
+import { WhatsAppSectionCTA } from '../common/WhatsAppSectionCTA';
 
 interface AboutSectionProps {
   onLearnMore: () => void;
@@ -71,23 +72,23 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
 
           {/* School Pupils and Campus Life Photography */}
           <div className="lg:col-span-6">
-            <div className="relative rounded-2xl overflow-hidden shadow-sm border border-[#E8DFD5] bg-white p-2">
-              <div className="relative rounded-xl overflow-hidden aspect-[16/10] bg-[#F4EFEB]">
+            <div className="relative rounded-2xl overflow-hidden shadow-sm border border-[#E8DFD5] bg-white">
+              <div className="relative overflow-hidden aspect-[16/10] w-full bg-[#F4EFEB]">
                 <ImageWithFallback
-                  src={SCHOOL_IMAGES.childrenGroup}
-                  alt="Sealed Nectar Ambassadors School pupils on campus in Sagamu"
+                  src={SCHOOL_IMAGES.assembly}
+                  alt="Sealed Nectar Ambassadors School morning assembly in Sagamu"
                   className="w-full h-full object-cover"
-                  fallbackText="Sealed Nectar Ambassadors School students smiling on campus"
+                  fallbackText="Sealed Nectar Ambassadors School morning assembly formation"
                 />
                 <div className="absolute top-3 left-3">
                   <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/95 text-[#6B1724] shadow-sm backdrop-blur-xs">
-                    Our Learning Community
+                    Morning Assembly & Orderly Community
                   </span>
                 </div>
               </div>
-              <div className="p-3 text-left">
+              <div className="p-4 text-left border-t border-[#E8DFD5]">
                 <p className="text-xs font-semibold text-[#6B1724] font-display">
-                  SNAS Pupils & Learning Community
+                  Daily Morning Assembly & Formation
                 </p>
                 <p className="text-[11px] text-[#57534E]">
                   4, Azeez Lamidi Street, Behind Loto Ewu-Oliwo, Makun, Sagamu
@@ -106,6 +107,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
             </div>
           </div>
         </div>
+
+        {/* WhatsApp Enquiries Call To Action */}
+        <WhatsAppSectionCTA
+          customTitle="Interested in Joining Sealed Nectar Ambassadors School?"
+          customSubtitle="Chat directly with the Proprietress on WhatsApp to ask about admission, syllabus, and enrolment."
+        />
       </div>
     </section>
   );

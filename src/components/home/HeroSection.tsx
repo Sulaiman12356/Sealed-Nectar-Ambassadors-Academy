@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowRight, Compass } from 'lucide-react';
+import { ArrowRight, Compass, MessageCircle } from 'lucide-react';
+import { WHATSAPP_URL, WHATSAPP_PHONE } from '../common/WhatsAppFloatingCTA';
 
 interface HeroSectionProps {
   onOpenApply: () => void;
@@ -75,6 +76,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApply, onExplore
               <Compass className="w-4 h-4 text-[#C88A1A]" />
               <span>EXPLORE OUR SCHOOL</span>
             </button>
+
+            {/* Direct WhatsApp Enquiry CTA */}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-sm sm:text-base font-black uppercase tracking-wider text-white bg-[#25D366] hover:bg-[#20bd5a] active:bg-[#1caa51] border-2 border-white/30 shadow-2xl transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            >
+              <MessageCircle className="w-5 h-5 fill-current" />
+              <span>CHAT ON WHATSAPP ({WHATSAPP_PHONE})</span>
+            </a>
           </div>
         </div>
       </div>

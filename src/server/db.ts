@@ -639,6 +639,36 @@ if (!existingGallery) {
   }
 }
 
+// Ensure the gallery items table contains all authentic uploaded photos
+try {
+  const newPhotos = [
+    { id: 'assemble', title: 'Daily Morning Assembly & Formation', category: 'School Events', src: '/images/assemble.jpeg', description: 'Disciplined pupils assembled on campus for morning devotion and moral guidance.', tag: 'Morning Assembly', sort_order: 1 },
+    { id: 'computer-training', title: 'Computer Science & ICT Workstation Suite', category: 'Classrooms', src: '/images/computer_training.jpeg', description: 'Hands-on digital learning where students master typing fluency and computer operations.', tag: 'STEM & ICT', sort_order: 2 },
+    { id: 'chinese-training-new', title: 'Mandarin Chinese Language Immersion Session', category: 'Classrooms', src: '/images/chinese_sealed.jpeg', description: 'Pupils actively learning Mandarin Chinese vocabulary and pronunciation.', tag: 'Chinese Class', sort_order: 3 },
+    { id: 'karate-cert', title: 'Karate Martial Arts Certificate & Sports Honors', category: 'Sports', src: '/images/karate_cert.jpeg', description: 'Students earning official martial arts certificates, demonstrating athletic control and discipline.', tag: 'Karate Club', sort_order: 4 },
+    { id: 'culture-dye', title: 'Cultural Day & Tie-and-Dye Craft Exhibition', category: 'School Events', src: '/images/culture_dye.jpeg', description: 'Students proudly showcasing traditional Adire tie-and-dye crafts.', tag: 'Cultural Crafts', sort_order: 5 },
+    { id: 'graduant-sealed', title: 'Graduating Ambassadors Convocation Ceremony', category: 'School Events', src: '/images/graduant_sealed.jpeg', description: 'Celebration of graduating pupils clad in academic gowns and caps.', tag: 'Graduation', sort_order: 6 },
+    { id: 'certificate-awards', title: 'Scholastic Excellence & Certificate Presentation', category: 'School Events', src: '/images/certificate.jpeg', description: 'Recognition of high-performing learners receiving awards of merit for exemplary performance.', tag: 'Merit Awards', sort_order: 7 },
+    { id: 'pledge-chinese', title: 'Multilingual Student Pledge & Oratorical Presentation', category: 'Students', src: '/images/pledge_chinese.jpeg', description: 'Students delivering school pledges and presentations in Mandarin Chinese.', tag: 'Global Oratory', sort_order: 8 },
+    { id: 'student-sealed', title: 'Ambassador in Official Uniform & Modest Hijab', category: 'Students', src: '/images/student_sealed.jpeg', description: 'A confident ambassador demonstrating the neatness and modesty of our student body.', tag: 'Student Uniform', sort_order: 9 },
+    { id: 'welcome-back', title: 'Joyful Term Resumption & Welcome Celebration', category: 'School Events', src: '/images/welcome_back.jpeg', description: 'Staff and pupils gathering warmly at the start of the new academic term.', tag: 'Term Resumption', sort_order: 10 },
+    { id: 'children-class', title: 'Collaborative Learning & Classroom Camaraderie', category: 'Students', src: '/images/children.jpeg', description: 'Pupils engaged in collaborative discussions and peer learning in their classroom.', tag: 'Classroom Life', sort_order: 11 },
+    { id: 'enrollment-desk', title: 'Enrollment & Academic Admissions Desk', category: 'Students', src: '/images/enrollment.jpeg', description: 'Active enrollment and registration desk for incoming students.', tag: 'Admissions Desk', sort_order: 12 },
+  ];
+
+  const insertStmt = db.prepare(`
+    INSERT OR REPLACE INTO gallery_items_cms (
+      id, title, category, src, description, tag, sort_order, is_published, created_at, updated_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+  `);
+
+  for (const p of newPhotos) {
+    insertStmt.run(p.id, p.title, p.category, p.src, p.description, p.tag, p.sort_order);
+  }
+} catch (e) {
+  // Ignored if table not ready
+}
+
 // Seed Announcements if empty
 const existingAnnouncements = db.prepare('SELECT id FROM announcements_cms LIMIT 1').get();
 if (!existingAnnouncements) {

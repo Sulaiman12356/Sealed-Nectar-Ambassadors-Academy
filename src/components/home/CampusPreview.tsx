@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { ImageWithFallback } from '../common/ImageWithFallback';
 import { CAMPUS_FACILITIES } from '../../data/schoolData';
+import { WhatsAppSectionCTA } from '../common/WhatsAppSectionCTA';
 
 interface CampusPreviewProps {
   onExploreCampus: () => void;
@@ -81,6 +82,12 @@ export const CampusPreview: React.FC<CampusPreviewProps> = ({ onExploreCampus })
             </div>
           ))}
         </div>
+
+        {/* WhatsApp Campus Visit & Enquiries */}
+        <WhatsAppSectionCTA
+          customTitle="Want to Tour Our Campus in Sagamu?"
+          customSubtitle="Message the Proprietress on WhatsApp to schedule a friendly campus tour and inspect our facilities."
+        />
       </div>
     </section>
   );

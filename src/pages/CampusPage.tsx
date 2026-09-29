@@ -55,40 +55,40 @@ export const CampusPage: React.FC<CampusPageProps> = ({ onNavigate }) => {
 
   const facilities = [
     {
-      title: 'Classrooms',
-      description: 'Well-ventilated, well-lit classrooms fitted with structured pedagogical charts, age-appropriate seating, and disciplined study layouts.',
-      image: '/images/sitting_children_sealed.jpg',
-      tag: 'Academic Spaces'
+      title: 'Well-Ventilated Classrooms',
+      description: 'Clean, well-lit, and age-appropriate study environments fitted with structured pedagogical charts, ergonomic seating, and interactive boards.',
+      image: '/images/children.jpeg',
+      tag: 'Classrooms'
     },
     {
-      title: 'Library & Reading Center',
-      description: 'Curated collection of Islamic texts, graded English readers, phonics storybooks and curriculum reference guides promoting quiet study.',
-      image: '/images/chinese_training_student.jpg',
-      tag: 'Literacy & Research'
+      title: 'Computer Science & ICT Suite',
+      description: 'Dedicated workstations equipped for computer literacy, keyboarding precision, digital skills, and foundational coding instruction.',
+      image: '/images/computer_training.jpeg',
+      tag: 'STEM & ICT'
     },
     {
-      title: 'Educational Toy & Activity Rooms',
-      description: 'Montessori-inspired manipulatives, sensory toys, and fine-motor coordination puzzles for our Crèche and Kindergarten pupils.',
-      image: '/images/children_sealed.jpg',
-      tag: 'Early Years'
+      title: 'Language & Reading Resource Center',
+      description: 'Specialized language immersion setting for Arabic phonology, graded English literature, and conversational Mandarin Chinese practice.',
+      image: '/images/chinese_sealed.jpeg',
+      tag: 'Languages'
     },
     {
-      title: 'Sports & Parade Field',
-      description: 'Spacious drill grounds for physical exercise, athletics, Karate club katas, and ceremonial student parades.',
-      image: '/images/marching_children_sealed.jpg',
-      tag: 'Athletics & Martial Arts'
+      title: 'Sports Field & Karate Arena',
+      description: 'Secured open-air athletic grounds for calisthenics, physical education games, martial arts kata drills, and student parades.',
+      image: '/images/karate_cert.jpeg',
+      tag: 'Sports'
     },
     {
-      title: 'Open Air Playground',
-      description: 'Safe, enclosed outdoor recreational area where learners build social bonds and physical agility under teacher supervision.',
-      image: '/images/boy_and_girl_sealed.jpg',
-      tag: 'Outdoor Recreation'
+      title: 'Creative Arts & Vocational Studio',
+      description: 'Practical learning workshop where pupils master traditional tie-and-dye textile crafts, drawing, and vocational independence.',
+      image: '/images/culture_dye.jpeg',
+      tag: 'Creative Arts'
     },
     {
-      title: 'Serene School Environment',
-      description: 'A protected, gated compound in peaceful Makun, Sagamu, situated away from high-speed vehicular traffic to safeguard children.',
-      image: '/images/staff_of_sealed_nectar.jpg',
-      tag: 'Safe Campus'
+      title: 'Assembly & Procession Grounds',
+      description: 'Dedicated quadrangle for morning devotions, flag ceremonies, school assemblies, and character-building addresses.',
+      image: '/images/assemble.jpeg',
+      tag: 'School Environment'
     }
   ];
 
